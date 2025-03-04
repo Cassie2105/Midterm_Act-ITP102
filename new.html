@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* Button Styling */
+	.nav-button {
+		background-color: rgb(204, 204, 204);
+		border: none;
+		padding: 10px 20px;
+		font-size: 16px;
+		font-weight: bold;
+		color: #000;
+		cursor: pointer;
+		transition: background-color 0.3s ease, color 0.3s ease;
+	}
+
+	/* Hover Effect */
+	.nav-button:hover {
+		background-color: rgb(150, 150, 150);
+		color: #fff;
+	}
+
+  /* Image Hover Effect */
+	.product-image {
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.product-image:hover {
+		transform: scale(1.05);
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	}
+
+    .popup {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .buyPopup{
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .popup img {
+        width: 300px; /* Set width */
+        height: auto;  /* Maintain aspect ratio */
+        }
+
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .close-btn {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .buy-btn {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background: rgb(6, 216, 24);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+  </style>
+</head>
+<body>
+        <table class="header" style="margin-right: calc(1%); width: 109%;">
+          <tbody>
+            <tr>
+              <td style="background-color: rgb(0, 0, 0); text-align: center; vertical-align: top;">
+  
+                <h1 id="isPasted"><img src="https://i.ibb.co/BHWX9PCH/Logo.png" style="width: 132px;" class="fr-fic fr-dii">&nbsp;<img src="https://i.ibb.co/fd2m23xs/What-you-see.png" style="width: 300px;" class="fr-fic fr-dii"></h1>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+  
+        <table class="nav" style="margin-right: calc(0%); width: 100%;">
+          <tbody>
+            <tr>
+              <td style="text-align: center; background-color: rgb(204, 204, 204); width: 30.9869%;">
+                <button class="nav-button" onclick="window.location.href='new.html'"><strong>ＨＯＭＥ</strong></button>
+            </td>
+            <td style="text-align: center; background-color: rgb(204, 204, 204); width: 35.2685%;">
+                <button class="nav-button" onclick="window.location.href='about.html'"><strong>ＡＢＯＵＴ</strong></button>
+            </td>
+            <td style="text-align: center; background-color: rgb(204, 204, 204); width: 33.7255%;">
+                <button class="nav-button" onclick="window.location.href='contact.html'"><strong>ＣＯＮＴＡＣＴ</strong></button>
+            </td>
+            </tr>
+          </tbody>
+        </table>
+  
+        <table style="margin-right: calc(0%); width: 100%;">
+          <tbody>
+            <!-- Row 1: 5 Columns -->
+            <tr>
+              <td style="width: 11.2005%; height: 5%; text-align: center;">
+  
+                <h3 id="isPasted"><span style="font-family: Impact, Charcoal, sans-serif; font-size: 30px;">Necklaces</span></h3>
+              </td>
+              <td style="width: 15.5817%;">
+                <div style="text-align: center;">
+  
+                  <p>
+                    <br>
+                  </p><img src="https://i.ibb.co/4wzGrz9g/Beach-Sand-Necklace.jpg" style="width: 150px;" class="fr-fic fr-rounded fr-shadow fr-dib product-image triggerImage"  data-title = "Beach Sand Necklace" data-price="$150" 
+                  data-description=" 
+                  A delicate glass orb capturing the essence of the ocean, blending blue waves with real beach sand. Perfect for beach lovers and those who cherish summer vibes."></div>
+  
+                <p style="text-align: center;"><span id="isPasted"><em><u>A delicate glass orb capturing the essence of the ocean, blending blue waves with real beach sand. Perfect for beach lovers and those who cherish summer vibes.</u></em></span></p>
+  
+                <p><span id="isPasted">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></p>
+              </td>
+              <td style="width: 14.2327%; background-color: rgb(209, 213, 216);">
+                <div style="text-align: center;"><span style="color: rgb(25, 25, 25); font-family: 'Market Sans', Arial, sans-serif; font-size: 22px; font-weight: 700;" id="isPasted"><u>Beach Sand&nbsp;<br>Necklace</u></span></div>
+  
+                <p style="text-align: center;" id="isPasted"><strong>&nbsp;<span style="font-size: 18px;">$150</span></strong></p>
+              </td>
+              <td style="width: 15.047%; text-align: center;">
+                <div style="text-align: center;"><span style="color: rgb(25, 25, 25); font-family: 'Market Sans', Arial, sans-serif; font-size: 22px; font-weight: 700;" id="isPasted"><img src="https://i.ibb.co/GQv2293y/Azure-Gleam-Necklace.jpg" style="width: 150px;" class="fr-fic fr-rounded fr-shadow fr-dib triggerImage"  data-title = "Azure Gleam Necklace" data-price="$150" 
+                    data-description="  A round pendant with swirls of blue, gold, and crystal-like accents. Its artistic design makes it a unique statement piece, ideal for adding elegance and color to any outfit.  " alt="Azure_Gleam_Necklace">&nbsp;</span><em><u>A round pendant with swirls of blue, gold, and crystal-like accents. Its artistic design makes it a unique statement piece, ideal for adding elegance and color to any outfit.</u></em></div>
+              </td>
+              <td style="width: 15.7574%; text-align: center; background-color: rgb(209, 213, 216);"><span style="color: rgb(25, 25, 25); font-family: 'Market Sans', Arial, sans-serif; font-size: 22px; font-weight: 700;" id="isPasted"><u>Azure Gleam Necklace</u></span>
+                <br><span style="color: rgb(25, 25, 25); font-family: 'Market Sans', Arial, sans-serif; font-size: 22px; font-weight: 700;"><strong id="isPasted"><span style="font-size: 18px;">$200</span></strong></span></td>
+              <td style="text-align: center; width: 15.8911%;"><img src="https://i.ibb.co/0RdPBZ7P/Mystic-Tide-Necklace.png" style="width: 150px;" id="isPasted" class="fr-fic fr-dii triggerImage"  data-title = "Mystic Tide Necklace" dat data-price="$150" alt="Mystic_Tide_Necklace" data-description="A striking blue gemstone encased in intricate silver metalwork, evoking a sense of mystery and magic. This eye-catching piece is perfect for anyone who loves bold, fantasy-inspired jewelry.">
+                <br><em><u>A striking blue gemstone encased in intricate silver metalwork, evoking a sense of mystery and magic. This eye-catching piece is perfect for anyone who loves bold, fantasy-inspired jewelry.</u></em></td>
+              <td style="width: 15.0025%; background-color: rgb(209, 213, 216);">
+                <div style="text-align: center;"><span style="color: rgb(25, 25, 25); font-family: 'Market Sans', Arial, sans-serif; font-size: 22px; font-weight: 700;" id="isPasted"><strong><u>Mystic Tide Necklace</u></strong></span></div>
+  
+                <p style="text-align: center;"><span style="color: rgb(25, 25, 25); font-family: 'Market Sans', Arial, sans-serif; font-size: 22px; font-weight: 700;" id="isPasted"><strong><span style="font-size: 18px;">$250</span></strong></span></p>
+              </td>
+              <td style="width: 15.0321%; width: 15.5000%;">
+                <div style="text-align: center;" id="isPasted"><strong>&ldquo;Discover unique, handcrafted necklaces inspired by nature&rsquo;s beauty. From beachy vibes to elegant, luxurious designs, find the perfect accessory to complete your style. Limited-time offers available &mdash; don&rsquo;t miss out!&rdquo;</strong></div>
+  
+                <p>
+                  <br>
+                </p>
+  
+                <p>
+                  <br>
+                </p>
+  
+                <p style="text-align: center;"><strong>BUY NOW!!!</strong></p>
+                <br>
+              </td>
+            </tr>
+            <!-- Row 2: Rings Section -->
+            <tr>
+              <td style="width: 11.2005%; text-align: center;">
+                <br>
+  
+                <h3 id="isPasted"><span style="font-family: Impact, Charcoal, sans-serif; font-size: 30px;">RINGS</span></h3>
+              </td>
+              <td style="width: 10.5817%; vertical-align: middle;"><img src="https://i.ibb.co/bj8TXyxV/Aurelia.png" style="width: 131px;" class="fr-fic fr-dib product-image triggerImage" data-title = "Aurelia" data-price="$150" data-description=" is a stylish and symbolic piece of jewelry featuring an owl design. Often crafted from silver, gold, or other metals, it represents wisdom, intuition, and mystery. Some designs include intricate feather details, gemstone eyes, or vintage engravings, making it a unique accessory for nature lovers and those who appreciate symbolic jewelry. " alt="Azure_Gleam_Necklace" >
+                <br>
+              </td>
+              <td style="vertical-align: middle; width: 14.2327%; background-color: rgb(209, 213, 216);">
+                <div style="text-align: center;" id="isPasted"><span style="font-size: 18px;"><strong><u>Aurelia</u></strong></span></div>
+                <div style="text-align: center;"><span style="font-family: Impact,Charcoal,sans-serif;"><em>$3, 990.00</em></span></div>
+                <br>
+              </td>
+              <td style="width: 14.047%; vertical-align: top; background-color: rgb(255, 255, 255);"><img src="https://i.ibb.co/Lz7c3dfJ/Froster.png" style="width: 127px;" class="fr-fic fr-dii product-image triggerImage"  data-title = "Winterfern" data-description="is a sleek and stylish piece of jewelry often inspired by the cool, crystalline beauty of ice." data-price="$150" alt="Azure_Gleam_Necklace"></td>
+              <td style="width: 11.7574%; vertical-align: middle; text-align: center; background-color: rgb(209, 213, 216);">
+                <br>
+                <div style="text-align: center;" id="isPasted"><strong>&nbsp;&nbsp;</strong><span style="font-size: 18px;"><strong><u>Winterfern</u></strong></span>
+                  <br><span style="font-family: Impact,Charcoal,sans-serif;"><em>$4, 580.00</em></span></div>
+              </td>
+              <td style="vertical-align: middle; text-align: center; width: 10.8911%;"><img src="https://i.ibb.co/dwPm7fBV/Dragon-Mania.png" style="width: 127px;" class="fr-fic fr-dii product-image triggerImage"  data-title = "Dragon Mania" data-price="$150" data-description="is a bold and symbolic piece of jewelry, often representing power, wisdom, and protection. " alt="Azure_Gleam_Necklace">
+                <br>
+              </td>
+              <td style="width: 6.0025%; vertical-align: top; text-align: center; background-color: rgb(209, 213, 216);">
+                <br>
+                <br>
+                <br><span style="color: rgb(65, 65, 65); font-family: sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 18px;"><strong style="font-weight: 700;"><u>Dragon Mania</u></strong></span>
+                <br><span style="color: rgb(65, 65, 65); font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: Impact, Charcoal, sans-serif;"><em>$6, 990.00</em></span>
+                <br>
+              </td>
+              <td style="vertical-align: top; text-align: justify; background-color: rgb(255, 255, 255); width: 12.5%;">
+                <br>
+  
+                <p>
+                  <br>
+                </p>
+                <div style="text-align: center;" id="isPasted"><strong>Get 20% off your first order!</strong></div>
+              </td>
+            </tr>
+            <tr>
+              <td style="width: 11.2005%; text-align: center;" rowspan="3">
+  
+                <h3 style="color: rgb(65, 65, 65); font-family: sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" id="isPasted"><span style="font-family: Impact, Charcoal, sans-serif; font-size: 30px;">Earrings</span></h3>
+              </td>
+              <td style="width: 10.5817%; vertical-align: middle;" rowspan="3"><img src="https://i.ibb.co/wFxhq5d7/juno-studs-penny-pairs-2000x.webp" style="width: 300px;" class="fr-fic fr-dib product-image triggerImage"  data-title = "Beach Sand Necklace" data-price="$150" 
+                data-description="Elegant and timeless, these gold studs add a touch of sophistication to any look."></td>
+              <td style="vertical-align: middle; width: 14.2327%; background-color: rgb(209, 213, 216);">
+                <div style="text-align: center;"><u><strong>Juno Gold Studs<br></strong></u><strong>$200</strong><strong id="isPasted">&nbsp;</strong></div>
+                <div style="text-align: center;">
+                  <br>
+                </div>
+              </td>
+              <td style="width: 14.047%; vertical-align: top; background-color: rgb(255, 255, 255);"><strong id="isPasted">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img src="https://i.ibb.co/sd3fWHjr/Penny-Pairs-Paris-Gold-Studs-Earrings-Jewelry-2000x-1.webp" style="width: 300px;" class="fr-fic fr-dib product-image triggerImage"  data-title = "Beach Sand Necklace" data-price="$150" 
+                data-description=" 
+                Elegant and timeless, these gold studs add a touch of sophistication to any look."></strong></td>
+              <td style="width: 11.7574%; vertical-align: middle; text-align: center; background-color: rgb(209, 213, 216);" rowspan="3">
+                <div style="text-align: center;"><strong id="isPasted">&nbsp;&nbsp;</strong><u id="isPasted"><strong>Echo Gold Earrings<br></strong></u><strong>$200</strong><strong>&nbsp;</strong></div>
+              </td>
+              <td style="vertical-align: middle; text-align: center; width: 10.8911%;"><img src="https://i.ibb.co/mFJfpdRs/lovina-huggies-penny-pairs-2000x.webp" style="width: 300px;" class="fr-fic fr-dib product-image triggerImage"  data-title = "Beach Sand Necklace" data-price="$150" 
+                data-description=" 
+                Stylish and versatile, these gold earrings elevate any outfit with a touch of elegance."></td>
+              <td style="width: 6.0025%; vertical-align: top; text-align: center; background-color: rgb(209, 213, 216);">
+                <div style="text-align: center;">&nbsp;<strong>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br><br></strong><u id="isPasted"><strong><br><br><br>Astra Gold Loops<br></strong></u><strong>$200</strong><strong>&nbsp;</strong></div>
+              </td>
+              <td style="vertical-align: top; text-align: justify; background-color: rgb(255, 255, 255); width: 12.5%;">
+  
+                <p>
+                  <br>
+                </p>
+                <div style="text-align: center;" id="isPasted">
+                  <br>
+                </div><strong>NEW DESIGNS</strong>
+                <br>
+                <br><strong>SAME PRICES, BETTER DESIGNS</strong>
+                <br>
+                <br><strong>SHOP NOW!</strong>
+                <br>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="footer">
+
+  <!-- Popup -->
+<div class="overlay" id="overlay"></div>
+<div class="popup" id="popup">
+    <h2 id="popup-title"></h2>
+    <img id="popup-image" src="" alt="">
+    <p id="popup-price"></p>
+    <p id="popup-description"></p>
+    <button class="close-btn" onclick="closePopup()">Close</button>
+    <button class="buy-btn" onclick="buyPopup()">Buy</button>
+</div>
+
+<div class="buyPopup" id="buyPopup">
+   <p id="buy-message">Thank you for buying!</p>
+    <button class="close-btn" onclick="closePopup()">Close</button>
+   
+</div>
+
+  
+
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+           let images = document.querySelectorAll(".triggerImage");
+           let popup = document.getElementById("popup");
+           let overlay = document.getElementById("overlay");
+           let popupTitle = document.getElementById("popup-title");
+           let popupImage = document.getElementById("popup-image");
+           let popupPrice = document.getElementById("popup-price");
+           let popupDescription = document.getElementById("popup-description")
+
+           let buyPopup = document.getElementById("buy-popup");
+           let buyMessage = document.getElementById("buy-message")
+
+           images.forEach(image => {
+               image.addEventListener("click", function () {
+                   popupTitle.textContent = image.getAttribute("data-title");
+                   popupImage.src = image.src;
+                   popupImage.alt = image.alt;
+                   popupPrice.textContent = "Price: " + image.getAttribute("data-price");
+                   popupDescription.innerHTML = "DESCRIPTION " + "<br> <br>" + image.getAttribute("data-description")
+
+                   popup.style.display = "block";
+                   overlay.style.display = "block";
+               });
+           });
+
+           overlay.addEventListener("click", closePopup);
+       });
+
+       function closePopup() {
+           document.getElementById("popup").style.display = "none";
+           document.getElementById("overlay").style.display = "none";
+           document.getElementById("buyPopup").style.display = "none";
+       }
+
+       function buyPopup() {
+           document.getElementById("buyPopup").style.display = "block";
+           document.getElementById("popup").style.display = "none";
+       }
+</script>
+</html>
